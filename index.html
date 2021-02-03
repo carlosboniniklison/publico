@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+HTML
+web o pagina: Ejercicios Unidad 4 - Diseño de Interfaces Web
+autor: Prof. Carlos Boni
+fecha: Diciembre 2020
+-->
+
+<head>
+	<title>2DAW-DIW-UD4. Prof.Carlos Boni</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="00-modelo.css">
+	<style>
+	/* aquí estilos aplicados solo a esta pagina */
+	body {
+		background-color: rgba(0, 0, 128, 0.1); /* Azul al 10% */
+		color: black;
+	}
+	</style>
+	<style>
+	/* aquí el segundo style en blanco para probar el selector */
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+	<header>
+	<h1>Ejercicios Unidad 9 - Lenguajes de Marcas</h1>
+	<h2>DOM CSS: acceso y manipulación con jQuery</h2>
+	<h3>Teclas con jQuery</h3>
+	<br/>
+		<p>Escribe algo debajo...</p>
+		<input type="text"/>
+		<div>...</div>
+
+		
+		<script>
+			$(document).ready(function(){
+				$("input").keydown(function(event){
+					$("div").html("Tecla: "+event.which);
+				});
+			});
+		</script>
+
+</body>
+</html>
+
