@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+HTML
+web o pagina: practicas en clases de LLMM CENEC 1DAM
+autor: Carlos Boni
+fecha: Febrero 2021
+-->
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<!-- importante SEO para la etiqueta del navegador -->
+	<title>Position CSS</title>
+	
+	<!-- solo aquellos estilos que solo aplican a esta pagina -->
+    <style>
+		body {
+			background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+		}
+		.pos-static{
+			background-color:yellow;
+			position:static;
+			left:50px;
+			top:60px;
+			/* Es el normal de html/css, que se aplica por defecto
+			y no aplica ningún desplazamiento - ignora el left	*/
+		}
+		.pos-relative{
+			background-color:yellow;
+			position:relative;
+			left:50px;
+			top:60px;
+			/* Este sitio me lo guardan, y me voy de paseo flotando,
+			mantiene como punto de referencia donde hubiera estado con
+			su ubicación por defecto con static. Se comporta como display block */
+		}
+
+		.pos-absolute{
+			background-color:yellow;
+			position:absolute;
+			left:50px;
+			top:60px;
+			/* Libero mi sitio original, y me voy de paseo flotando,
+			ajusta el ancho del elemento al contenido como display flex
+			cambio mi punto de referencia al primer elemento de la pagina (body).
+			PROBAR: Le podemos cambiar el anclaje de referencia si lo incluimos
+			dentro de un elemento posicionado (no static) */
+		}
+
+		.pos-fixed{
+			background-color:yellow;
+			position:fixed;
+			right:50px;
+			bottom:60px; 
+			/* Libero mi sitio original, y me voy de paseo flotando,
+			ajusta el ancho del elemento al contenido como display flex
+			cambio mi punto de referencia al marco o viewport. */
+		}
+
+		.pos-sticky{
+			background-color:yellow;
+			position:sticky;
+			margin-left:50px;
+			margin-top:60px;
+			top:50px;
+			/* mantiene su espacio original, se desplaza flotando
+			en modo block (el ancho es el del contenedor) y se vuelve
+			fixed al llegar a la posicion top */
+		}
+		.ancestro{
+			position:absolute;
+			background: rgba(255, 0, 0, 0.1) /* Rojo al 10% */
+			margin-left:100px;
+			margin-top:200px;
+		}
+
+		
+	</style>
+	
+</head>
+
+
+<body>
+
+	<!-- cabecera de pagina -->
+	<header>
+		<h1>CSS POSITION: </h1>
+		<h2>ABSOLUTE</h2>
+		<br/>
+	</header>
+
+<div>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>(1) Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p class="pos-absolute">(2) Un parrafo de texto que lo hago un poco largo para que Un parrafo de texto que lo hago un poco largo para que Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>(3) Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+	<p>Un parrafo de texto que lo hago un poco largo para que no quede corto.</p>
+</div>
+
+	<!-- pie de pagina -->
+	<footer>
+		<br/><br/><br/>
+		<div>&copy; 2021 <a href="https://carlosboni.com" target="_blank">Prof. Carlos Boni</a></div>
+	</footer>
+
+</body>
+</html>
