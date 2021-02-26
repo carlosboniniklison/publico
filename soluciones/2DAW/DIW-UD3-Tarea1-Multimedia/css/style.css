@@ -1,0 +1,300 @@
+* {
+  left: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+}
+
+header {
+  height: auto;
+  background-color: rgb(73, 151, 153);
+}
+
+h1 {
+  font-size: 6vw;
+  font-family: "Major Mono Display", monospace;
+  font-weight: 1400;
+  color: rgb(116, 207, 210);
+}
+
+h2 {
+  font-size: 3vw;
+  font-family: "Major Mono Display", monospace;
+  color: rgb(46, 93, 95);
+}
+
+h3 {
+  font-size: 3vw;
+  font-family: "Major Mono Display", monospace;
+  color: aliceblue;
+}
+
+/* ================================================== */
+
+/* ===== INTRO ===== */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4vh;
+}
+
+.intro h1 {
+  padding-top: 1vh;
+}
+
+.social-m {
+  padding: 4vh 0;
+  font-size: 28px;
+  color: aliceblue;
+}
+
+.social-m i {
+  padding: 0 1vw;
+  transition: all 0.4s;
+}
+
+.social-m i:hover {
+  color: black;
+}
+
+.btn-container {
+  padding: 0 0 4vh 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-container a {
+  text-decoration: none;
+}
+
+.btn-container a:hover .btn-a {
+  background-color: aliceblue;
+  color: black;
+}
+
+.btn-container a:hover .btn-b {
+  background-color: black;
+  color: aliceblue;
+}
+
+.btn-a {
+  margin-right: 2vw;
+  padding: 7px 14px;
+  background-color: black;
+  color: aliceblue;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.btn-b {
+  margin-left: 2vw;
+  padding: 7px 14px;
+  background-color: aliceblue;
+  color: black;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.img-container {
+  border: 2px solid rgb(116, 207, 210);
+  margin-bottom: 5vh;
+}
+
+.img-container img {
+  width: auto;
+  height: 60vh;
+}
+
+/* ================================================== */
+
+/* ========= main =========== */
+
+/* ====== video ====== */
+
+#video {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(22, 22, 22);
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-container h2 {
+  padding-top: 4vh;
+}
+
+.vid {
+  padding-top: 5vh;
+}
+
+iframe {
+  margin: 20px 50px;
+  width: 33vw;
+  height: 33vh;
+  border: 3px solid rgb(46, 93, 95);
+}
+
+/* ================================================== */
+
+/* ====== songs ====== */
+
+#songs {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  padding-bottom: 8vh;
+  background-color: rgb(73, 151, 153);
+}
+
+.songs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.songs-container h2 {
+  padding: 4vh 0 6vh 0;
+  color: aliceblue;
+}
+
+.song-row {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px 0;
+  border: 2px solid rgb(46, 93, 95);
+  border-radius: 30px;
+}
+
+.nombre {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+  color: aliceblue;
+}
+
+.song-row a {
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 8px;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: rgb(46, 93, 95);
+  color: rgb(73, 151, 153);
+  transition: all 0.3s ease-in-out;
+}
+
+.song-row a:hover {
+  background-color: rgb(22, 22, 22);
+  color: aliceblue;
+}
+
+/* ================================================== */
+
+/* ====== conciertos ====== */
+
+#concerts {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  background-color: rgb(22, 22, 22);
+}
+
+.concerts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.concerts-container h2 {
+  padding: 4vh 0 8vh 0;
+}
+
+.concert-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 8vh;
+}
+
+.fecha {
+  font-size: 22px;
+  font-family: "Major Mono Display", monospace;
+  color: aliceblue;
+}
+
+.lugar {
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(73, 151, 153);
+}
+
+.concert-row a {
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 8px;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: rgb(46, 93, 95);
+  color: aliceblue;
+  transition: all 0.3s ease-in-out;
+}
+
+.concert-row a:hover {
+  background-color: aliceblue;
+  color: rgb(22, 22, 22);
+}
+
+/* ================================================== */
+
+footer {
+  background-color: rgb(73, 151, 153);
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-wrapper a {
+  margin: 5vh 0;
+  padding: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: rgb(73, 151, 153);
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-wrapper a h3 {
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-wrapper a:hover {
+  background-color: rgb(22, 22, 22);
+}
+
+.footer-wrapper a:hover h3 {
+  color: rgb(73, 151, 153);
+}

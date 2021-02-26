@@ -1,0 +1,107 @@
+<script>
+//constructor que recibe parametros
+function edificio(calle, numero, cp){
+	
+	//propiedades del objeto
+	this.calle = calle;
+	this.numero = numero;
+	this.cp = cp;
+	this.plantas = new Array(); 
+	
+	//metodos
+	
+	//agrega plantas al array y en cada planta agrega puertas
+    this.agregarPlantasYPuertas = function(numPlantas, puertas){
+        if (this.plantas.length == 0){
+            for (var i = 0; i < numPlantas; i++){
+                this.plantas[i] = new Array();
+                for (var j = 0; j < puertas; j++){
+                    // con metodo push se añaden elementos al array
+                    this.plantas[i].push("");
+                }
+            }
+        }
+        else{
+            for (var i = 0; i < numPlantas; i++){
+                this.plantas[this.plantas.length] = new Array();
+                for (var j = 0; j < puertas; j++){
+                    this.plantas[this.plantas.length-1].push("");
+                }
+            }
+        }
+    };
+	this.modificarNumero = function(nuevoNumero){
+		this.numero = nuevoNumero;
+	}
+	
+	this.modificarCalle = function(nuevaCalle){
+		this.calle = nuevaCalle;
+	}
+	
+	this.modificarCp = function(nuevoCp){
+		this.cp = nuevoCp;
+	}
+	
+	this.mostrarCalle = function (){
+		return this.calle;
+	};
+	
+	this.mostrarNumero = function (){
+		return this.numero;
+	};
+	
+	this.mostrarCp = function (){
+		return this.cp;
+	};
+	
+	this.mostrarPlantas = function(){
+        document.write("<h4>Listado de propietarios del edificio de la calle " + this.mostrarCalle() + " con numero: " + this.mostrarNumero() + "</h4>");
+        for(var i = 0; i < this.plantas.length;i++){
+            for(var j = 0; j < this.plantas[i].length;j++){
+                document.write("<li>El propietario de la puerta " + parseInt(j+1) +" de la planta " + parseInt(i+1) + ": " + this.plantas[i][j] + "</li>");
+            }
+        }
+    };
+    
+    this.agregarPropietario = function(nombre, planta, puerta){
+        this.plantas[planta][puerta] = nombre;
+        document.write("<li>"+this.plantas[planta][puerta] + " es ahora el propietario de la puerta " + (parseInt(this.plantas[planta].indexOf(this.plantas[planta][puerta]))+1)
+         + " de la planta " + (parseInt(this.plantas.indexOf(this.plantas[planta]))+1) + ".</li>");
+        
+    };
+	
+	document.write("<li>Construido nuevo edificio en calle: "+calle+", nº: "+numero+", CP: "+cp+".</ul>");
+}
+
+document.write("Instanciamos 3 objetos edificioA, edificioB y edificioC con estos datos:</br></br>");
+
+var edificioA = new edificio("Serrano",25,12345);
+var edificioB = new edificio("Avd. Boulevard",1,30123);
+var edificioC = new edificio("Avd Logroño",10,26580);
+
+document.write('<br>');
+document.write('<br> Calle del edificioA : ' + edificioA.mostrarCalle());
+document.write('<br> Número del edificioB : ' + edificioB.mostrarNumero());
+document.write('<br> Código postal del edificioC : ' + edificioC.mostrarCp() + '<br>');
+
+edificioA.agregarPlantasYPuertas(5, 3);
+
+document.write("Agregamos " + edificioA.plantas.length + " plantas y " + edificioA.plantas[0].length + " puertas por planta al edificio A...<br/>");
+
+document.write("<br/>Agregamos 4 propietarios al edificio A...<br/><br/>");
+
+edificioA.agregarPropietario("Jose Antonio Ochoa García.", 1, 1);
+edificioA.agregarPropietario("Luis Martinez-De Quel.", 2, 1);
+edificioA.agregarPropietario("Marta Sevilla Osés.", 2, 2);
+edificioA.agregarPropietario("Antonio Sáenz Martinez-Losa.", 3, 1);
+
+edificioA.mostrarPlantas();
+
+document.write("<br/>Agregamos 1 planta más al edificio A...<br/><br/>");
+edificioA.agregarPlantasYPuertas(1, 3);
+
+document.write("</br>");
+edificioA.agregarPropietario(" Pedro Benito Ramirez", 2, 1);
+
+edificioA.mostrarPlantas();
+</script>

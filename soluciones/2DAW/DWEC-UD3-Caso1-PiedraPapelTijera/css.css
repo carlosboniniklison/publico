@@ -1,0 +1,61 @@
+body {
+    background: #000;
+    font-family: "Arial";
+}
+#juego {
+    background: url(img/img.jpg) no-repeat;
+    padding: auto;
+    width: 800px;
+    min-height: 384px;
+    margin: auto;
+}
+#juego h1{
+    text-align: center;
+    margin: auto;
+}
+#piedra,
+#papel,
+#tijera{
+    width: 130px;
+    height: 130px;
+    border-radius:50%;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,0);
+    padding: auto;
+    display:inline-block;
+    position:relative;
+    overflow: hidden;
+}
+#piedra:hover,
+#papel:hover,
+#tijera:hover{
+    background: rgba(0,0,0,0.2);
+}
+#piedra {
+    margin: 4em 0 0 8em;
+}
+#papel {
+    margin: 4em 0 0 5em;
+}
+#tijera {
+    margin: 4em 0 0 4em;
+}
+
+#efecto {
+    position: absolute;
+    background: rgba(0,0,0,0.9);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+#efecto h1 {
+    text-align: center;
+    font-size: 5em;
+    color: #fff;
+    margin: 2em 0 0;
+    padding: 0;
+    line-height: 1em;
+}
