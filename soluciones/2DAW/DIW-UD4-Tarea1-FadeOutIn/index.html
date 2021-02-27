@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>fadeOut demo</title>
-    <style>
-      p {
-      font-size: 150%;
-      cursor: pointer;
-      }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
-    </script>
-  </head>
-  <body>
-    <p>
-      If you click on this paragraph
-      you'll see it just fade away.
-    </p>
-    <script>
-      $( "p" ).click(function() {
-      $( "p" ).fadeOut( 600 );
-      $( "p").fadeIn( 5000 );
-      });
-    </script>
-  </body>
-</html>
+<!doctype html> 
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <title>fadeOut demo</title> 
+  <style>   p {     font-size: 150%;     cursor: pointer; 
+  } 
+  </style> 
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+</head> 
+<body> 
+  
+<p> 
+  If you click on this paragraph   you'll see it just fade away. 
+</p> 
+<script> 
+$( "p" ).click(function() { 
+  $( "p" ).fadeOut(300); 
+  $( "p" ).fadeIn(300);
+}); 
+
+</script> 
+</body> 
+</html> 
