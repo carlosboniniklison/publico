@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>2DAW - Despliegue de Aplicaciones Web - CENEC 2019</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="padding:20px">
+  <h1>Despliegue de Aplicaciones Web</h1>
+  <h2>Entorno Servidor + Desarrollo Java EE</h2>
+  <h4><br/>Apache Tomcat + Java VM + Maven + Glassfish JavaEE + Spring Tool Suite</h4>
+  <p>-STS es un IDE de Spring basado en Eclipse que incorpora Spring Boot Initializr y Tomcat-</p>
+</div>
+<p style="padding-left:40px">Pasos sugeridos para poder usar un ordenador como servidor y simultáneamente como plataforma de desarrollo de 
+aplicaciones Java Enterprise Edition (JavaEE) <br/>
+	<ul style="padding-left:80px">
+		<li>Apache <b>Tomcat</b> 9.0.27 (implementa <b>Servlet</b> 4.0 and JavaServer Pages <b>JSP</b> 2.3)</li>
+		<li>Apache <b>Maven</b> 3.6.2	</li>
+		<li><b>GlassFish</b> 5.0</li>
+		<li>Oracle <b>Java JDK</b> v 1.8.0 update 231 (Java 8)</li>
+		<li><b>Eclipse</b> 4.13.0 (2019-9-R para Java EE)</li>
+		<li><b>Spring</b> Tool Set STS 4.4.0</li>
+	</ul>
+</p>
+<br/>
+<div style="margin-left:5%;margin-right:5%">
+  <p style="color:gray">(pinche en los botones que siguen para obtener los detalles...)</p>
+  <div class="row">
+	<div class="col-sm-6">
+      <h2>INSTALAR</h2>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#tomcat">1 - Tomcat Java Server</button>
+				<div id="tomcat" class="collapse">
+					Es un Servidor de Aplicaciones Java, que además sirve páginas estáticas HTTP.<br/>
+					Se deben <b>descomprimir</b> las carpetas en la ubicación preferida del pc.<br/>
+					Descargar <b><a href="https://tomcat.apache.org/download-90.cgi" target="_blank">apache-tomcat-9.0.27-windows-x64.zip</a></b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#maven">2 - Maven Compiler</button>
+				<div id="maven" class="collapse">
+					Es una herramienta para la gestión y construcción de proyectos Java, que controla las dependencias
+					para facilitar la compilación y el empaquetado de código basándose en un modelo POM.<br/>
+					Se deben <b>descomprimir</b> las carpetas en la ubicación preferida del pc.<br/>
+					Descargar <b><a href="https://maven.apache.org/download.cgi" target="_blank">apache-maven-3.6.2-bin.zip</a></b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#jdk8">3 - Java JDK-8</button>
+				<div id="jdk8" class="collapse">
+					Es un Java Development Kit, o JDK, cuya especificación es Java SE Development Kit 8 Update 231 64-bit windows, 
+					que incluye al JRE, la máquina virtual de java JVM, además de otras herramientas para el desarrollo de aplicaciones.<br/>
+					Se debe <b>instalar</b> como cualquier aplicación Windows, dejando todos los parámetros por defecto.<br/>
+					Descargar <b><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">jdk-8u231-windows-x64.exe</a></b><br/><br/>
+					(ORACLE obliga a estar registrado para acceder a las descargas).
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#glassfish">4 - Glassfish JavaEE Server</button>
+				<div id="glassfish" class="collapse">
+					Oracle GlassFish Enterprise Server es un servidor de aplicaciones que siguen la especificación 
+					Java EE. Este Java Platform Enterprise Edition 8 SDK está basado en Apache Tomcat más un 
+					componente adicional llamado Grizzly para escalabilidad y velocidad.
+					Usaremos la variante <b>Web Profile</b> de este SDK.<br/>
+					Se deben <b>descomprimir</b> las carpetas en la ubicación preferida del pc.<br/>
+					Descargar <b><a href="https://www.oracle.com/java/technologies/java-ee-sdk-web-download.html" target="_blank">java_ee_sdk-8u1-web.zip</a></b><br/><br/>
+					(ORACLE obliga a estar registrado para acceder a las descargas).
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#eclipse">5 - Eclipse IDE</button>
+				<div id="eclipse" class="collapse">
+					Es un entorno de desarrollo IDE con una gran comunidad de usuarios y desarrolladores.
+					Usaremos la versión Eclipse IDE for Enterprise Java Developers.<br/>
+					Se deben <b>descomprimir</b> las carpetas en la ubicación preferida del pc.<br/>
+					Descargar <b><a href="https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-enterprise-java-developers" target="_blank">eclipse-jee-2019-09-R-win32-x86_64.zip</a></b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#spring">6 - Spring Tools STS</button>
+				<div id="spring" class="collapse">
+					Spring Tools Suite es una personalización con herramientas Spring para IDEs, en nuestro caso Eclipse.
+					STS se vale de Spring Boot para simplificar el proceso de desarrollo de una aplicación Java con Spring.
+					Spring es un framework para desarrollo Java, un contenedor de inversion de control basado en dependencias.
+					Soporta el patrón de desarrollo Modelo Vista Controlador MVC. Se apoya en maven. Es un poco complicado
+					pero usando STS se simplifica mucho el proceso de creación de aplicaciones.
+					.<br/>
+					Se deben <b>descomprimir</b> las carpetas en la ubicación preferida del pc.<br/>
+					Descargar <b><a href="https://spring.io/tools" target="_blank">spring-tool-suite-4-4.4.0.RELEASE-e4.13.0-win32.win32.x86_64.zip</a></b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#entorno">7 - Variables de Entorno</button>
+				<div id="entorno" class="collapse">
+					<p>(En estos ejemplos la instalación se hizo a partir de <b>C:\server</b>; en caso de utilizar otra ubicación
+					se deben adecuar las variables de entorno utilizadas).</p>
+					Editar las variables de entorno del sistema
+					(usar cuenta con permiso de administración, Panel de Control, 
+					Sistema, Variables de Entorno) --> botón derecho sobre este equipo... propiedades<br/>
+					<br/>
+					7.1. añadir variable de entorno para el servidor apache tomcat<br/>
+					CATALINA_HOME="<b>C:\server</b>\apache-tomcat-9.0.27"<br/>
+					<br/>
+					7.2. añadir variable de entorno para soporte JAVA<br/>
+					JRE_HOME="C:\Program Files\Java\jre1.8.0_231"<br/>
+					JAVA_HOME="C:\Program Files\Java\jdk1.8.0_231"<br/>
+					<br/>
+					7.3.- modificar la variable PATH, añadiéndole para el compilador maven<br/>
+					PATH="<b>C:\server</b>\apache-maven-3.6.2\bin"<br/>
+					<br/>
+					7.4. añadir variable de entorno para el servidor glassfish<br/>
+					GLASSFISH_HOME="<b>C:\server</b>\glassfish5\glassfish"
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#conflictos">8 - Puertos en Conflicto</button>
+				<div id="conflictos" class="collapse">
+					En este manual, usaremos los siguientes puertos principales:<br/>
+					<ul style="padding-left:80px;text-align:left">
+						<li><b>2017</b> - STS Tomcat (servidor de aplicaciones para desarrollo)
+						</li>
+						<li><b>8080</b> u <b>58080</b> - Apache Tomcat (servidor Java básico para producción)
+						</li>
+						<li><b>34848</b> - Glassfish (administración del servidor)
+						</li>
+						<li><b>38080</b> - Glassfish (servidor de aplicaciones JavaEE para producción)
+						</li>
+					</ul>
+					(IMPORTANTE: reiniciar los servidores para que los cambios tengan efecto.)
+					<br/><br/>
+					8.1 El primer conflicto suele ocurrir al instalar <b>Apache Tomcat</b> si es que ya tenemos otro servicio en el puerto 8080,
+					como por ejemplo base de datos ORACLE. Aquí editaremos en el fichero <b>server.xml</b> de Apache Tomcat la siguiente línea:<br/>
+					<Connector port=”<b>58080</b>” protocol=”HTTP/1.1″ (IMPORTANTE: en caso de trabajar directamente con Eclipse en lugar
+					de con STS, se deberá instalar un plugin de Tomcat y modificar allí también dicho puerto)<br/><br/>
+					8.2 Para usar <b>Spring Tool Suite</b> (para el modo desarrollo)<br/>
+					Mientras editamos y probamos nuestra aplicación con el IDE Spring Tool Suite STS, el servidor Tomcat incluido pretende
+					usar el mismo puerto 8080 que ya está ocupado por el Tomcat antes instalado para el servidor Glassfish.
+					Para resolver este conflicto, vamos a <b>reconfigurar el puerto del Tomcat de Eclipse</b>.
+					Para ello, en STS añada la línea <b>server.port = 2017</b> en <b>application.properties</b> dentro de la carpeta <b>src/main/resources</b>, como se indica en la imagen:<br/> 
+					<a href="https://www.java4s.com/spring-boot-tutorials/spring-boot-how-to-change-default-tomcat-server-port/" target="_blank"><img src="https://www.java4s.com/wp-content/uploads/2017/09/spring-boot-change-default-tomcat-port-using-properties.PNG" alt="Modificar puerto Tomcat en Spring Tools Suite" /></a>
+					.<br/><br/>
+					8.3 Modificar pueto de <b>GlassFish</b> (para el modo servidor)<br/>
+					Modo servidor es cuando ya tenemos la aplicación finalizada y lista para desplegar, en formato .JAR 
+					(Java Archive file format), para ponerla "en producción".<br/>
+					Como el puerto 8080 ya está en uso, debemos cambiar el puerto de Glassfish (este conflicto también suele ocurrir con Oracle).<br/>
+					Edite el archivo domain.xml que se encuentra en el directorio de configuración donde instaló Glassfish, por ejemplo:<br/>
+					C:\Archivos de programa\glassfish-3.1.2.2\glassfish\domains\domain1\config \domain.xml <br/>
+					y en las línea 253-255 se debe <b>modificar los puertos de Glassfish</b> (en el ejemplo, le sumo 30.000):<br/>
+					... network-listener port="38080" ...<br/>
+					... network-listener port="38181" ...<br/>
+					... network-listener port="34848" ...<br/>
+				</div>
+			</li>
+		</ul>
+    </div>
+    <div class="col-sm-6">
+      <h2>TRABAJAR</h2>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#verivars">(1). Verificar Variables</button>
+				<div id="verivars" class="collapse">
+					<p>(En estos ejemplos la instalación se hizo a partir de <b>C:\server</b>; en caso de utilizar otra ubicación
+					se deben adecuar las variables de entorno utilizadas).</p>
+					(no es necesario hacer siempre este paso, puesto que las variables del sistema solo se borran explícitamente)<br/>
+					Verificar que estén presentes estas variables de entorno del sistema,<br/>
+					usando el comando<br/><b>set</b><br/><br/>
+					CATALINA_HOME="<b>C:\server</b>\apache-tomcat-9.0.27"<br/>
+					GLASSFISH_HOME="<b>C:\server</b>\glassfish5\glassfish"<br/>
+					JRE_HOME="C:\Program Files\Java\jre1.8.0_231"<br/>
+					JAVA_HOME="C:\Program Files\Java\jdk1.8.0_231"<br/>
+					PATH="<b>C:\server</b>\apache-maven-3.6.2\bin"<br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#versiones">(2). Verificar Versiones</button>
+				<div id="versiones" class="collapse">
+					(tampoco es necesario hacer siempre este paso, a menos que hayamos actualizado software)<br/><br/>
+					2.1.- La versión de Java debe ser la 1.8; validarlo<br/>
+					usando el comando<br/><b>java -version</b><br/><br/>
+					2.2.- La versión de Apache Maven debe ser la 3.6.2; validarlo<br/>
+					usando el comando<br/><b>mvn --version</b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#servidores">(3). Iniciar Servidores</button>
+				<div id="servidores" class="collapse">
+					3.1.- Iniciar Apache Tomcat<br/>
+					usando el comando<br/><b>%CATALINA_HOME%\bin\startup.bat</b><br/><br/>
+					3.2.- Iniciar Java Glassfish server<br/>
+					usando el comando<br/><b>%GLASSFISH_HOME%\bin\asadmin start-domain</b><br/><br/>
+					(en caso de error, ver en el apartado instalación cómo resolver los puertos conflictivos)<br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#activos">(4). Verificar Servidores Activos</button>
+				<div id="activos" class="collapse">
+					4.1.- Ver si Apache Tomcat está activo<br/>
+					pinchando en esta URL<br/><b><a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a></b><br/><br/>
+					4.2.- Ver si Java Glassfish server está atendiendo al dominio definido<br/>
+					pinchando en esta URL<br/><b><a href="http://localhost:38080/" target="_blank">http://localhost:38080/</a></b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#adminglass">(5). Administrar Glassfish Server</button>
+				<div id="adminglass" class="collapse">
+					El servidor Glassfish puede servir más de un dominio. 
+					Se puede administrar pinchando en esta URL<br/><b><a href="http://localhost:34848/" target="_blank">http://localhost:34848/</a></b><br/><br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#desarrollo">(6). Desarrollar</button>
+				<div id="desarrollo" class="collapse">
+					IMPORTANTE: ver Puertos en Conflicto en esta guía.<br/><br/>
+					6.1.- Con <b>Eclipse</b> (debe tener instaladas extensiones spring del marketplace)<br/>
+					ejecutando, por ejemplo,<br/><b>C:\server\eclipse\eclipse.exe</b><br/><br/>
+					6.2.- Con <b>Spring Tools Suite</b> - STS (eclipse + spring)<br/>
+					ejecutando, por ejemplo,<br/><b>C:\server\sts-4.4.0.RELEASE\SpringToolSuite4.exe</b><br/>
+					(esta es la mejor opción, ya que STS es una versión de eclipse mejorada integrando spring tools y que permite,
+					por ejemplo, crear un nuevo proyecto spring tool que interactúa con Initializr de spring.io, descarga el proyecto
+					maven, y lo importa automáticamente en la carpeta workspace de la instalación de spring, con lo cual ya mismo
+					aparece en la carpeta de paquetes del editor STS. Estamos listos para, por ejemplo, crear un controlador.)<br/>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#despliegue">(7). Desplegar (poner en Producción)</button>
+				<div id="despliegue" class="collapse">
+					Debemos exportar nuestra aplicación en formato .WAR para poder ponerla en producción utilizando el panel de control del 
+					servidor Glassfish.<br/>Para ello, desde la interfaz de SpringToolsSuite, pinchar con botón derecho sobre el proyecto, Export, Elegir en el asistente wizard la opción
+					Java EE App Client JAR file.<br/><br/>
+					<p>Una vez creado el archivo .war (con nuevo proyecto, Dynamic Web Project en Web Content  creamos el archivo html)
+						 exportamos el archivo  e inicializamos el servidor glassfish (desde el enlace proporcionado).
+						  Nos vamos al apartado ‘aplication’, le damos a ‘deploy’, marcamos ‘local packaged…’ y elegimos la ruta donde 
+						  se encuentra el archivo.war.<br/>Es mejor copiar y pegar la ruta ya que el IDE da errores al intentar usar la interfaz
+						  para seleccionarla.
+						
+						</p>
+						<p>Le damos a ok y se carga el archivo en el servidor. Después le damos a la opción ‘launch’. 
+							Pinchamos en el enlace, y una vez en él, añadimos en la url el archivo /aprobado.html.</p>
+							
+					
+				</div>
+			</li>
+			<li class="list-group-item">
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#apagar">(8). Apagar Servidores</button>
+				<div id="apagar" class="collapse">
+					(por SEGURIDAD es importante no dejar servidores web ni http activos en casa)<br/>
+					8.1.- Apagar Glassfish JavaEE server<br/>
+					ejecutando este comando<br/><b>%GLASSFISH_HOME%\bin\asadmin stop-domain</b><br/><br/><br/>
+					8.2.- Apagar Apache Tomcat server<br/>
+					ejecutando este comando<br/><b>%CATALINA_HOME%\bin\shutdown.bat</b><br/><br/><br/>
+				</div>
+			</li>
+		</ul>
+    </div>
+  </div>
+<div class="jumbotron text-center" style="padding:20px;margin:20px;border: 1px solid grey;border-radius: 50px;">
+  <h2>Algunos enlaces útiles</h2>
+  <p>(abren en ventana nueva)</p>
+	<ul style="padding-left:80px;text-align:left">
+		<li><a href="https://javaee.github.io/tutorial" target="_blank" class="btn btn-outline-primary" role="button">Java EE</a> tutoriales oficiales</li>
+		<li><a href="https://www.oracle.com/technetwork/java/jar-140466.html" target="_blank" class="btn btn-outline-primary" role="button">Java EE</a> paquetes y formato .JAR (Java ARrchive)</li>
+		<li><a href="http://www.tutorialesprogramacionya.com/javaya/index.php?inicio=0" target="_blank" class="btn btn-outline-primary" role="button">Java+Eclipse</a> tutoriales y ejemplos en español</li>
+		<li><a href="https://javaee.github.io/glassfish/documentation" target="_blank" class="btn btn-outline-primary" role="button">Glassfish</a> documentación oficial</li>
+		<li><a href="https://javaee.groups.io/g/glassfish/" target="_blank" class="btn btn-outline-primary" role="button">Glassfish</a> foros</li>
+		<li><a href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/spring-boot-tutorial/" target="_blank" class="btn btn-outline-primary" role="button">Spring Boot</a> tutorial</li>
+		<li><a href="https://programandoointentandolo.com/2018/10/tutorial-spring-boot-creando-nuestra-primera-aplicacion.html" target="_blank" class="btn btn-outline-primary" role="button">Spring Boot</a> tutorial para una primera aplicación</li>
+		<li><a href="https://www.arquitecturajava.com/que-es-spring-boot/" target="_blank" class="btn btn-outline-primary" role="button">Spring Boot</a> "Hola Mundo" muy fácil</li>
+		<li><a href="https://www.youtube.com/watch?v=J4wyBKVgJx0" target="_blank" class="btn btn-outline-primary" role="button">Spring Boot</a> 
+		(vídeo de youtube) tutorial para crear un proyecto Java Web</li>
+		<li><a href="https://youtu.be/r4kqcSs4F7I" target="_blank" class="btn btn-outline-primary" role="button">Spring</a> 
+		(vídeo de youtube) conceptos: Core Java SE: Anotaciones, Reflexión, Dependencias e Inyección. Maven. Patrones de Diseño. 
+		Programación Orientada a Objetos. Spring.</li>
+		</ul>
+  </p>
+</div>
+  <p style="padding:30px;font-style:italic">
+  CRÉDITOS: esta guía orientativa es una recopilación de información pública disponible en Internet, compilada 
+  por los alumnos con la coordinación del profesor Carlos Boni, en el marco del módulo Diseño de Aplicaciones Web del 2º 
+  año del ciclo formativo de grado superior DAW - Despliegue de Aplicaciones Web, del Centro de Formación CENEC Málaga.<br/>
+  
+  </p>
+</div>
+
+</body>
+</html>
+
+
+
