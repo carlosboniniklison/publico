@@ -22,7 +22,7 @@ function miFuncion(xml) {
   var tabla="<tr><th>Empleado</th><th>Clave</th></tr>";
   var x = xmlDoc.getElementsByTagName("usuario");
   for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
+    tabla += "<tr><td>" +
     x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
     "</td><td>" +
     x[i].getElementsByTagName("clave")[0].childNodes[0].nodeValue +
