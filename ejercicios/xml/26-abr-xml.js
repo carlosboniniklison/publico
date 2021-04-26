@@ -12,7 +12,7 @@ function leerXML() {
       miFuncion(this);
     }
   };
-  xhr.open("GET", "registrados.xml", true);
+  xhr.open("GET", "https://carlosboniniklison.github.io/publico/ejercicios/xml/registrados.xml", true);
   xhr.send();
 }
 
