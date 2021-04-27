@@ -19,7 +19,7 @@ function leerXML() {
 function miFuncion(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var tabla="<tr><th>Empleado</th><th>Clave</th></tr>";
+  var tabla="<table><tr><th>Empleado</th><th>Clave</th></tr>";
   var x = xmlDoc.getElementsByTagName("usuario");
   for (i = 0; i <x.length; i++) { 
     tabla += "<tr><td>" +
@@ -28,5 +28,6 @@ function miFuncion(xml) {
     x[i].getElementsByTagName("clave")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
+  tabla += "</table>"
   document.getElementById("contenidoXML").innerHTML = tabla;
 }
