@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+HTML
+módulo: Lenguajes de Marcas
+autor: Carlos Boni
+fecha: Febrero 2021
+-->
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<!-- importante SEO para la etiqueta del navegador -->
+	<title>CSS: Position</title>
+	
+	
+	<!-- solo aquellos estilos que solo aplican a esta pagina -->
+    <style>
+
+		* {
+			color:rgba(0,0,0,0.4);
+		}
+
+		em {
+			font-size:2em;
+			color:rgba(0,0,0,1);
+			background-color:rgba(0,0,0,0.2);
+		  
+		}
+
+		li {
+			border: 1px solid;
+			font-size:20px;
+			padding-top:5px;
+			padding-bottom:5px,
+		}
+
+		li.diferente {
+		  position: static;
+		  color:black;
+		  font-weight:900;
+		  background-color:rgba(0,255,0,0.4);
+		  top: 40px;
+		  left: 120px;
+		}
+	</style>
+	
+	<!-- scripts externos de librerias que usaremos, por ejemplo Bootstrap o JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+
+	<!-- cabecera de pagina -->
+	<header>
+		<h1>AJAX</h1>
+		<h2>consulta clima de ciudades </h2>
+		<h3>SOLUCIÓN PROPUESTA </h3>
+	</header>
+	
+	<!-- bloque de contenido de la pagina -->
+	<main>
+		<br/>
+			<label for="pos">Elija ciudad:</label>
+			<select name="pos" id="pos">
+				<option value="2514256" selected>Málaga</option>
+				<option value="3128760">Barcelona</option>
+				<option value="2643743">Londres</option>
+				<option value="2968815">París</option>
+				<option value="6542283">Milán</option>
+			</select>
+		<br/>
+		<p>Ciudad consultada: <em id="msg"></em></p>
+		<div id="datos">... aquí aparecerán los datos averiguados ...</div>
+            <span id="temperatura"></span><br>
+            <span id="humedad"></span><br>
+            <span id="viento"></span><br>
+            <span id="visibilidad"></span><br>
+            <span id="sensacion_termica"></span><br>
+        </ul>
+    </div>		
+
+
+
+	</main>
+
+
+	<!-- pie de pagina -->
+	<footer>
+		<br/><br/><br/>
+		<div>&copy; 2020 <a href="https://carlosboni.com" target="_blank">Prof. Carlos Boni</a></div>
+	</footer>
+
+	<script>
+		// seccion de codigo javascript. 
+
+		const API_KEY = '250dc721cec7fe2dc83b7dc772168d52';
+		var id="2514256";
+
+		// elegir ciudad
+		$(document).ready(function() {
+			$( "select" ).change(function () {
+				var str = "";
+				$( "select option:selected" ).each(function() {
+					str += $( this ).text() + "-" + $( this ).val() + " ";
+				});
+				$( "#msg" ).text( str );
+				// aquí la consulta con Ajax al servicio de https://openweathermap.org/appid
+				id=$( this ).val();
+				getWeatherByCityId(id);
+			})
+		});
+		
+		// consultar clima
+		function getWeatherByCityId(id) {
+			if (id){
+				var request = new XMLHttpRequest();
+				request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=' + id + '&appid=' + API_KEY, true);
+				request.onreadystatechange = function(aEvt) {
+					if (request.readyState == 4) {
+						if (request.status == 200) {
+							var response = JSON.parse(request.responseText);
+							if (response) {
+								showData(response.main.temp, response.main.humidity, response.wind.speed, response.visibility, response.main.feels_like);
+							}
+						} else {
+							console.log("Error loading page\n");
+						}
+					}
+				};
+				request.send(null);
+			} 
+		}
+
+		// mostrar información averiguada
+		function showData(temperatura, humedad, viento, visibilidad, sensacion_termica) {
+			document.getElementById('temperatura').innerHTML = "Temperatura: " + temperatura + " ºF";
+			document.getElementById('humedad').innerHTML = "Humedad: " + humedad + " g/m3";
+			document.getElementById('viento').innerHTML = "Velocidad viento: " + viento+ " kms/h";
+			document.getElementById('visibilidad').innerHTML = "Visibilidad: " + visibilidad;
+			document.getElementById('sensacion_termica').innerHTML = "Sensación térmica: " + sensacion_termica+ " ºF";
+			document.getElementById('datos').style.visibility = 'visible';
+		}
+
+		
+	</script>
+</body>
+</html>

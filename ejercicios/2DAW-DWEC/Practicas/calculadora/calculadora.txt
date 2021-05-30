@@ -1,0 +1,15 @@
+caso de prueba de ejemplo
+
+PRESIONO          MUESTRA
+
+C                   borra todo
+1                   1
++                   1
+7                   8  (suma 7 al nro anterior porque recuerda
+                         el último operador, en este caso la +)
+-                   8
+5                   3
+/                   3
+3                   1
+5                   
+

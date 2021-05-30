@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--
+API de AJAX
+módulo: DWEC
+autor: Carlos Boni
+fecha: Febrero 2021
+-->
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<!-- importante SEO para la etiqueta del navegador -->
+	<title>AJAX: consulta API publica</title>
+	
+	
+	<!-- solo aquellos estilos que solo aplican a esta pagina -->
+    <style>
+
+		* {
+			color:rgba(0,0,0,0.6);
+		}
+
+		em {
+			font-size:2em;
+			color:rgba(0,0,0,1);
+			background-color:rgba(0,0,0,0.2);
+		  
+		}
+
+		li {
+			border: 1px solid;
+			font-size:20px;
+			padding-top:5px;
+			padding-bottom:5px,
+		}
+
+		li.diferente {
+		  position: static;
+		  color:black;
+		  font-weight:900;
+		  background-color:rgba(0,255,0,0.4);
+		  top: 40px;
+		  left: 120px;
+		}
+	</style>
+	
+	<!-- scripts externos de librerias que usaremos, por ejemplo Bootstrap o JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="05feb-ciudades.js"></script>
+	
+</head>
+
+
+<body>
+
+	<!-- cabecera de pagina -->
+	<header>
+		<h1>AJAX</h1>
+		<h2>consulta clima de ciudades </h2>
+		<h3>SOLUCIÓN PROPUESTA </h3>
+	</header>
+	
+	<!-- bloque de contenido de la pagina -->
+	<main>
+		<br/>
+			<label for="pos">Elija ciudad:</label>
+			<select name="pos" id="pos">
+				<option value="2514256" selected>Málaga</option>
+				<option value="3128760">Barcelona</option>
+				<option value="2643743">Londres</option>
+				<option value="2968815">París</option>
+				<option value="6542283">Milán</option>
+			</select>
+		<br/>
+		<p>Ciudad consultada: <em id="msg"></em></p>
+		<div id="datos">... aquí aparecerán los datos averiguados ...</div>
+            <span id="temperatura"></span><br>
+            <span id="humedad"></span><br>
+            <span id="viento"></span><br>
+            <span id="visibilidad"></span><br>
+            <span id="sensacion_termica"></span><br>
+        </ul>
+    </div>		
+
+
+
+	</main>
+
+
+	<!-- pie de pagina -->
+	<footer>
+		<br/><br/><br/>
+		<div>&copy; 2021 <a href="https://carlosboni.com" target="_blank">Prof. Carlos Boni</a></div>
+	</footer>
+
+
+</body>
+</html>

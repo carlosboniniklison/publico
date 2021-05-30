@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+  Solucion de Ejercicios Propuestos
+  3.3. - Mensaje en Etiqueta
+ -->
+<head>
+  <title>3.3. - Mensaje en Etiqueta</title>
+  <meta charset="UTF-8">
+  <style>
+	body {
+		background: rgba(0, 0, 128, 0.1) /* Azul al 10% */
+	}
+  </style>
+</head>
+
+<!-- hago la llamada con un parámetro en lugar de fijar el mensaje en la funcion
+para así poder reutilizarla en otra parte del código -->
+<body onload="miFuncion('Página cargada correctamente')">
+<br>
+<p id="mensaje" />
+<br>
+<script>
+  // seccion de codigo javascript 
+function miFuncion(texto)
+  {
+    document.getElementById("mensaje").innerHTML=texto;	
+  }
+</script>
+</body>
+</html>
