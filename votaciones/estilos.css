@@ -12,10 +12,20 @@ Se incluyen los principales SELECTORES SIMPLES; hay más combinaciones...
 */
 
 :root {
-  --azulclaro: #e6f2ff;
+  --azulclaro: #e6f2ff; /* Azul al 10% */
   --fondooscuro: #4775d1;
   --fondomedio: #7094db;
   --fondoclaro: #99b3e6;
+  --blanco: #ffffff;
+}
+
+.ojo {
+	width:40px;
+	object-fit:include;
+	background-color:transparent;
+}
+.proy {
+	text-align:right;
 }
 
 * {
@@ -29,12 +39,12 @@ Se incluyen los principales SELECTORES SIMPLES; hay más combinaciones...
 }
 
 body {
-	background-color: var(--azulclaro); /* Azul al 10% */
+	background-color: var(--blanco);
 }
 
 .bloque1 {
 	width:33%;
-	min-width:300px;
+	min-width:400px;
 	display:inline-block;
 	background-color:var(--fondoclaro);
 }
